@@ -1,0 +1,45 @@
+compileJava {
+    options.compilerArgs += ["-processor", "io.vertx.codegen.CodeGenProcessor"]
+    options.compilerArgs += ["-AoutputDirectory=${projectDir}/src/main"]
+}
+
+ext {
+    vertxVersion = '3.0.0-SNAPSHOT'
+    elasticSearchVersion = '1.5.0'
+    jacksonVersion = '2.4.3'
+    sendgridVersion = '2.0.0'
+    jaxbVersion = '2.2.11'
+    slf4jVersion = '1.7.12'
+    junitVersion = '4.12'
+    jsonUnitTestVersion = '1.5.3'
+    commonsLangVersion = "3.3.2"
+}
+
+repositories {
+    mavenLocal()
+    mavenCentral()
+    maven {
+        url = 'http://oss.sonatype.org/content/repositories/snapshots/'
+    }
+}
+
+dependencies {
+    compile "io.vertx:vertx-core:$vertxVersion"
+    compile "io.vertx:vertx-hazelcast:$vertxVersion"
+    compile "io.vertx:vertx-service-proxy:$vertxVersion"
+    compile "io.vertx:vertx-service-factory:$vertxVersion"
+    compile "io.vertx:vertx-codegen:$vertxVersion"
+    compile "io.vertx:vertx-docgen:$vertxVersion"
+    compile "io.vertx:vertx-metrics:$vertxVersion"
+    compile "io.vertx:vertx-reactive-streams:$vertxVersion"
+    compile "io.vertx:vertx-auth-service:$vertxVersion"
+    compile "io.vertx:vertx-apex:$vertxVersion"
+
+    compile 'com.englishtown.vertx:vertx-hk2:2.0.0-RC2'
+
+    compile "org.elasticsearch:elasticsearch:$elasticSearchVersion"
+
+    testCompile "io.vertx:vertx-unit:$vertxVersion"
+    testCompile "io.vertx:vertx-core:$vertxVersion:tests"
+    testCompile "junit:junit:$junitVersion"
+}
