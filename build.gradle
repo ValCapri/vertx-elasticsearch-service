@@ -18,7 +18,7 @@ compileJava {
 
 ext {
     vertxVersion = '3.0.0-SNAPSHOT'
-    elasticSearchVersion = '1.5.0'
+    elasticSearchVersion = '1.4.4'
     jacksonVersion = '2.4.3'
     sendgridVersion = '2.0.0'
     jaxbVersion = '2.2.11'
@@ -26,6 +26,8 @@ ext {
     junitVersion = '4.12'
     jsonUnitTestVersion = '1.5.3'
     commonsLangVersion = "3.3.2"
+    hk2Version = '2.0.0-RC3'
+    whenVersion = '4.0.0-RC3'
 }
 
 repositories {
@@ -48,7 +50,7 @@ dependencies {
     compile "io.vertx:vertx-auth-service:$vertxVersion"
     compile "io.vertx:vertx-apex:$vertxVersion"
 
-    compile 'com.englishtown.vertx:vertx-hk2:2.0.0-RC2'
+    compile "com.englishtown.vertx:vertx-hk2:$hk2Version"
 
     compile "org.elasticsearch:elasticsearch:$elasticSearchVersion"
 
