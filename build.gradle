@@ -1,3 +1,16 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.github.jengelman.gradle.plugins:shadow:1.1.1'
+    }
+}
+
+apply plugin: 'java'
+
 compileJava {
     options.compilerArgs += ["-processor", "io.vertx.codegen.CodeGenProcessor"]
     options.compilerArgs += ["-AoutputDirectory=${projectDir}/src/main"]
