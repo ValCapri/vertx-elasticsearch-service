@@ -17,7 +17,7 @@ compileJava {
 }
 
 ext {
-    vertxVersion = '3.0.0-SNAPSHOT'
+    vertxVersion = '3.0.0-milestone5'
     elasticSearchVersion = '1.4.4'
     jacksonVersion = '2.4.3'
     sendgridVersion = '2.0.0'
